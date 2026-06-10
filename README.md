@@ -296,7 +296,7 @@ Shows the complete VPC deployment process including subnet creation, route table
 
 Displays the visual relationship between networking components deployed within AWS.
 
-![Resource Map](screenshots/resource-map.png)
+![Resource Map](resource-map.png)
 
 ---
 
