@@ -29,11 +29,12 @@ By completing this project, I learned how to:
 
 ## Architecture Diagram
 
+## Architecture Diagram
+
 ```mermaid
 flowchart TB
 
-    Internet((🌐 Internet))
-    
+    Internet([Internet])
     IGW[Internet Gateway]
 
     Internet --> IGW
@@ -45,53 +46,33 @@ flowchart TB
             subgraph PublicSubnet["Public Subnet (10.1.1.0/24)"]
                 PublicRT[Public Route Table]
                 PublicSG[Public Security Group]
-                PublicEC2["Public EC2 Instance<br/>Amazon Linux"]
+                PublicEC2[Public EC2 Instance]
             end
 
             subgraph PrivateSubnet["Private Subnet (10.1.2.0/24)"]
                 PrivateRT[Private Route Table]
                 PrivateSG[Private Security Group]
-                PrivateEC2["Private EC2 Instance<br/>Amazon Linux"]
+                PrivateEC2[Private EC2 Instance]
             end
 
         end
 
         subgraph AZ2["Availability Zone B"]
-
-            subgraph PublicSubnet2["Public Subnet (Reserved)"]
-                PubReserve[Future Resources]
-            end
-
-            subgraph PrivateSubnet2["Private Subnet (Reserved)"]
-                PrivReserve[Future Resources]
-            end
-
+            PublicReserve[Public Subnet]
+            PrivateReserve[Private Subnet]
         end
 
     end
 
     IGW --> PublicRT
+    PublicRT --> PublicEC2
 
-    PublicRT -->|0.0.0.0/0| PublicEC2
+    PublicSG -. Protects .-> PublicEC2
+    PrivateSG -. Protects .-> PrivateEC2
 
-    PublicSG --> PublicEC2
+    PublicEC2 <--> PrivateEC2
 
-    PrivateSG --> PrivateEC2
-
-    PrivateRT -->|Local Route| PrivateEC2
-
-    PublicEC2 <-->|SSH / ICMP / Internal Traffic| PrivateEC2
-
-    classDef internet fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef network fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef public fill:#90EE90,stroke:#333,stroke-width:2px;
-    classDef private fill:#FFB6C1,stroke:#333,stroke-width:2px;
-
-    class Internet internet;
-    class IGW network;
-
-    class PublicRT,PublicSG,PublicEC2 public;
-    class PrivateRT,PrivateSG,PrivateEC2 private;
+    PrivateRT --> PrivateEC2
 ```
 
 ---
