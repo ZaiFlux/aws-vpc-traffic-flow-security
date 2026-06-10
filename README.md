@@ -312,7 +312,7 @@ Demonstrates successful SSH access to the EC2 instance located in the public sub
 
 Shows inbound and outbound rules configured for the public EC2 instance.
 
-![Public Security Group](screenshots/public-security-group.png)
+![Public Security Group](public-security-groups.png)
 
 ---
 
@@ -320,7 +320,7 @@ Shows inbound and outbound rules configured for the public EC2 instance.
 
 Shows inbound and outbound rules configured for the private EC2 instance.
 
-![Private Security Group](screenshots/private-security-group.png)
+![Private Security Group](private-security-groups.png)
 
 ---
 
