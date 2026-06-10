@@ -41,25 +41,16 @@ flowchart TB
 
     subgraph VPC["AWS VPC (10.1.0.0/16)"]
 
-        subgraph AZ1["Availability Zone A"]
-
-            subgraph PublicSubnet["Public Subnet (10.1.1.0/24)"]
-                PublicRT[Public Route Table]
-                PublicSG[Public Security Group]
-                PublicEC2[Public EC2 Instance]
-            end
-
-            subgraph PrivateSubnet["Private Subnet (10.1.2.0/24)"]
-                PrivateRT[Private Route Table]
-                PrivateSG[Private Security Group]
-                PrivateEC2[Private EC2 Instance]
-            end
-
+        subgraph PublicSubnet["Public Subnet (10.1.1.0/24)"]
+            PublicRT[Public Route Table]
+            PublicSG[Public Security Group]
+            PublicEC2[Public EC2 Instance]
         end
 
-        subgraph AZ2["Availability Zone B"]
-            PublicReserve[Public Subnet]
-            PrivateReserve[Private Subnet]
+        subgraph PrivateSubnet["Private Subnet (10.1.2.0/24)"]
+            PrivateRT[Private Route Table]
+            PrivateSG[Private Security Group]
+            PrivateEC2[Private EC2 Instance]
         end
 
     end
@@ -67,11 +58,10 @@ flowchart TB
     IGW --> PublicRT
     PublicRT --> PublicEC2
 
-    PublicSG -. Protects .-> PublicEC2
-    PrivateSG -. Protects .-> PrivateEC2
+    PublicSG -.-> PublicEC2
+    PrivateSG -.-> PrivateEC2
 
     PublicEC2 <--> PrivateEC2
-
     PrivateRT --> PrivateEC2
 ```
 
