@@ -282,7 +282,7 @@ Displays the visual relationship between networking components deployed within A
 
 ## Public EC2 Terminal and Private EC2 Terminal
 
-Demonstrates successful SSH access to the EC2 instance located in the public subnet.
+Demonstrates successful SSH access to the EC2 instance.
 
 ![Public EC2 Terminal and Private EC2 Terminal](terminal.png)
 
