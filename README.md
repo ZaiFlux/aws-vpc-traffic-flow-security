@@ -31,7 +31,7 @@ By completing this project, I learned how to:
 
 ## Architecture Diagram
 
-![AWS VPC Architecture](screenshots/architecture-diagram.png)
+![AWS VPC Architecture](aws_vpc_architecture_diagram.svg)
 # AWS Resources Created
 
 ## VPC
