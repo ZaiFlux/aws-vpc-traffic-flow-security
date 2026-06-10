@@ -300,19 +300,11 @@ Displays the visual relationship between networking components deployed within A
 
 ---
 
-## Public EC2 Terminal
+## Public EC2 Terminal and Private EC2 Terminal
 
 Demonstrates successful SSH access to the EC2 instance located in the public subnet.
 
-![Public EC2 Terminal](screenshots/public-ec2-terminal.png)
-
----
-
-## Private EC2 Terminal
-
-Demonstrates successful access to the EC2 instance deployed in the private subnet through secure internal communication.
-
-![Private EC2 Terminal](screenshots/private-ec2-terminal.png)
+![Public EC2 Terminal and Private EC2 Terminal](terminal.png)
 
 ---
 
