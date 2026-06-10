@@ -31,42 +31,7 @@ By completing this project, I learned how to:
 
 ## Architecture Diagram
 
-```mermaid
-flowchart TB
-
-    Internet([Internet])
-    IGW[Internet Gateway]
-
-    Internet --> IGW
-
-    subgraph VPC["AWS VPC (10.1.0.0/16)"]
-
-        subgraph PublicSubnet["Public Subnet (10.1.1.0/24)"]
-            PublicRT[Public Route Table]
-            PublicSG[Public Security Group]
-            PublicEC2[Public EC2 Instance]
-        end
-
-        subgraph PrivateSubnet["Private Subnet (10.1.2.0/24)"]
-            PrivateRT[Private Route Table]
-            PrivateSG[Private Security Group]
-            PrivateEC2[Private EC2 Instance]
-        end
-
-    end
-
-    IGW --> PublicRT
-    PublicRT --> PublicEC2
-
-    PublicSG -.-> PublicEC2
-    PrivateSG -.-> PrivateEC2
-
-    PublicEC2 <--> PrivateEC2
-    PrivateRT --> PrivateEC2
-```
-
----
-
+![AWS VPC Architecture](screenshots/architecture-diagram.png)
 # AWS Resources Created
 
 ## VPC
