@@ -288,7 +288,7 @@ Monitoring ensures operational visibility and helps identify performance or conn
 
 Shows the complete VPC deployment process including subnet creation, route table configuration, and Internet Gateway attachment.
 
-![VPC Creation Workflow](screenshots/vpc-creation-workflow.png)
+![VPC Creation Workflow](vpc-creation-work-flow.png)
 
 ---
 
