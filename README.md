@@ -336,7 +336,7 @@ Shows inbound and outbound rules configured for the private EC2 instance.
 
 Displays monitoring metrics and operational status for both deployed instances.
 
-![EC2 Monitoring](screenshots/ec2-monitoring.png)
+![EC2 Monitoring](monitoring.png)
 
 ---
 
